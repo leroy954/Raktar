@@ -1,0 +1,31 @@
+﻿<Window x:Class="Raktár.Menuoldal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raktár"
+        mc:Ignorable="d"
+        Title="Menuoldal" Height="450" Width="800">
+    <Grid>
+        <Image Margin="82,85,527,117" Source="/listaWPF1.png" Stretch="Fill"/>
+        <Button x:Name="btnTermeklista" Content="Terméklista" HorizontalAlignment="Left" Margin="118,322,0,0" VerticalAlignment="Top" Height="40" Width="91" Click="btnTermeklista_Click" UseLayoutRounding="True" Cursor="Pen">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Menüpontok" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="166" FontWeight="Bold" FontSize="24"/>
+        <Image Margin="312,94,312,126" Source="/eladasikon.png" Stretch="Fill"/>
+        <Button x:Name="btnEladas" Content="Eladás" HorizontalAlignment="Center" Margin="0,322,0,0" VerticalAlignment="Top" Width="96" Height="40" UseLayoutRounding="False" BorderThickness="1,1,1,1" Cursor="Hand" Click="btnEladas_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Image Margin="556,94,68,126" Source="/statisztikawpf.png" Stretch="Fill"/>
+        <Button x:Name="btnStatisztika" Content="Statisztika" HorizontalAlignment="Left" Margin="596,322,0,0" VerticalAlignment="Top" Width="96" Height="40" Cursor="UpArrow" Click="btnStatisztika_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
