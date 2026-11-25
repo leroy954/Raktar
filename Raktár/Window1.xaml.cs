@@ -18,7 +18,10 @@ namespace Raktár
 
     public partial class Window1 : Window
     {
-        static List<Termekek> termek = new List<Termekek>();
+        public static List<Termekek> termek = new List<Termekek>();
+
+        public static List<Elad> eladasok = new List<Elad>();
+
 
         public Window1()
         {
@@ -32,6 +35,15 @@ namespace Raktár
             sr.Close();
             dataGrid1.ItemsSource = termek;
             dataGrid1.Items.Refresh();
+
+            StreamReader sr2 = new StreamReader("eladasok.txt");
+            while (!sr2.EndOfStream)
+            {
+                string[] darabok = sr2.ReadLine().Split(';');
+                eladasok.Add(new Elad(darabok[0], DateTime.Parse(darabok[1]), int.Parse(darabok[2])));
+            }
+            sr2.Close();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

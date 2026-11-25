@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Statisztika" Height="450" Width="800">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="282,70,282,116"/>
+        <DataGrid x:Name="dgStat" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="246,72,246,114"/>
         <Label Content="Eladások termékenként összesen" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnNyomtatas" Content="Nyomtatás" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Width="184" Height="36"/>
+        <Button x:Name="btnNyomtatas" Content="Nyomtatás" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Width="184" Height="36" Click="btnNyomtatas_Click"/>
         <Button x:Name="btnFomenu" Content="Főmenü" HorizontalAlignment="Left" Margin="656,368,0,0" VerticalAlignment="Top" Width="95" Height="28" Click="btnFomenu_Click"/>
 
     </Grid>

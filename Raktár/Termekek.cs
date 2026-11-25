@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raktár
 {
-    internal class Termekek
+    public class Termekek
     {
         public int Cikkszam { get; set; }
 

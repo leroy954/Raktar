@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,10 @@ namespace Raktár
         public Eladas()
         {
             InitializeComponent();
+            foreach (Termekek t in Window1.termek)
+            {
+                cbxEladas.Items.Add(t.Termek);
+            }
         }
 
         private void btnFomenu_Click(object sender, RoutedEventArgs e)
@@ -30,5 +35,27 @@ namespace Raktár
             m1.Show();
             this.Hide();
         }
+
+        private void cbxEladas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            
+
+        }
+
+        private void btnEladas_Click(object sender, RoutedEventArgs e)
+        {
+            string termeknev = cbxEladas.SelectedItem.ToString();
+            DateTime datum = DateTime.Parse(tbxDatum.Text);
+            int mennyiseg = int.Parse(tbxMennyiseg.Text);
+
+            MessageBox.Show("Sikeres eladás!");
+
+            Window1.eladasok.Add(new Elad(termeknev, datum, mennyiseg));
+            StreamWriter sw = new StreamWriter("eladasok.txt", true);
+            sw.WriteLine($"{termeknev}; {datum}; {mennyiseg}");
+            sw.Close();
+        }
+
     }
 }

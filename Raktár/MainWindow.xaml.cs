@@ -25,6 +25,7 @@ namespace Raktár
 
 
 
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,11 +34,17 @@ namespace Raktár
             {
                 string[] darabok = sr.ReadLine().Split(' ');
                 users.Add(new User(darabok[0], darabok[1]));
-
-
-
             }
             sr.Close();
+
+            StreamReader sr2 = new StreamReader("termekek.txt");
+            while (!sr2.EndOfStream)
+            {
+                string[] darabok = sr2.ReadLine().Split(';');
+                Window1.termek.Add(new Termekek(darabok[1], int.Parse(darabok[0])));
+                
+            }
+            sr2.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
